@@ -137,6 +137,6 @@ template "/etc/swift/proxy-server.conf" do
              "bind_host" => node["swift"]["network"]["proxy-bind-ip"],
              "bind_port" => node["swift"]["network"]["proxy-bind-port"],
              "authkey" => authkey,
-             "memcache_servers" => memcache_servers)
+             "memcache_servers" => memcache_servers.sort)
    notifies :restart, "service[swift-proxy]", :immediately
 end
