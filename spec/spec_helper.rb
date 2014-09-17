@@ -59,6 +59,7 @@ def swift_stubs # rubocop:disable MethodLength
     'swift' => {
       'service_pass' => 'foobar'
     }
+  } 
     Chef::Recipe.any_instance.stub(:search).with(:node, 'chef_environment:_default AND roles:swift-setup').and_return([n])
     Chef::Application.stub(:fatal!)
   end
