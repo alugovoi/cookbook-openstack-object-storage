@@ -23,6 +23,7 @@ include_recipe 'openstack-object-storage::memcached'
 class Chef::Recipe # rubocop:disable Documentation
   include IPUtils
   include ::Openstack
+  include Swiftauthkey
 end
 
 if node.run_list.expand(node.chef_environment).recipes.include?('openstack-object-storage::setup')
