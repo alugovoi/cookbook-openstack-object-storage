@@ -62,7 +62,6 @@ def swift_stubs # rubocop:disable MethodLength
   } 
     Chef::Recipe.any_instance.stub(:search).with(:node, 'chef_environment:_default AND roles:swift-setup').and_return([n])
     Chef::Application.stub(:fatal!)
-  end
 end
 
 shared_examples 'keystone-authmode' do
